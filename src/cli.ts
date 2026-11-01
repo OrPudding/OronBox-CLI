@@ -17,7 +17,7 @@ program
   .description("Official command-line tool for OronBox wearable management")
   .version(getPackageVersion(), "-v, --version", "display the current version")
   .option("-H, --host <host>", "OronBox server host address (default: 127.0.0.1)")
-  .option("-P, --port <port>", "OronBox server port (default: 8080)")
+  .option("-P, --port <port>", "OronBox server port (default: 10517)")
   .option("--json", "output in structured JSON format")
   .addCommand(createDiscoverCommand())
   .addCommand(createPairCommand())

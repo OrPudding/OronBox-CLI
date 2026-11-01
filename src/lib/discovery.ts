@@ -9,7 +9,7 @@ export interface DiscoveredService {
   serverId?: string;
 }
 
-export function discoverOronBoxServices(timeoutMs = 2500): Promise<DiscoveredService[]> {
+export function discoverOronBoxServices(timeoutMs = 5000): Promise<DiscoveredService[]> {
   return new Promise((resolve) => {
     const bonjour = new Bonjour();
     const discovered: DiscoveredService[] = [];
@@ -19,7 +19,7 @@ export function discoverOronBoxServices(timeoutMs = 2500): Promise<DiscoveredSer
       // Find suitable IPv4 address
       const ipv4 = service.addresses?.find((addr) => /^\d+\.\d+\.\d+\.\d+$/.test(addr));
       const host = ipv4 || service.host || service.referer?.address || "127.0.0.1";
-      const port = service.port || 8080;
+      const port = service.port || 10517;
 
       const txt = (service.txt || {}) as Record<string, string>;
       const fingerprint = txt.fp || "";

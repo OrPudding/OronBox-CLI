@@ -20,14 +20,24 @@ Official command-line tool (CLI) for OronBox, used to connect to the Local API S
 
 ## Installation
 
-```bash
-# Execute directly without installing
-npx oronbox-cli <command>
+Global installation is recommended:
 
-# Or install globally
+```bash
 npm install -g oronbox-cli
 # or
 pnpm add -g oronbox-cli
+```
+
+Once installed, execute `oronbox-cli` directly in your terminal:
+
+```bash
+oronbox-cli <command>
+```
+
+You can also run commands directly without global installation via npx:
+
+```bash
+npx oronbox-cli <command>
 ```
 
 ## Quick Start

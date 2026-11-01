@@ -20,14 +20,24 @@ OronBox 官方命令行工具（CLI），用于在计算机终端通过局域网
 
 ## 安装
 
-```bash
-# 直接执行
-npx oronbox-cli <command>
+推荐全局安装到系统：
 
-# 全局安装
+```bash
 npm install -g oronbox-cli
 # 或
 pnpm add -g oronbox-cli
+```
+
+安装后即可在终端全局直接执行 `oronbox-cli`：
+
+```bash
+oronbox-cli <command>
+```
+
+也可以无需安装，直接通过 npx 即时执行：
+
+```bash
+npx oronbox-cli <command>
 ```
 
 ## 快速上手

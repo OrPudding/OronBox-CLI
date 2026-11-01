@@ -6,10 +6,10 @@ import { renderTable } from "../lib/table";
 export function createDiscoverCommand(): Command {
   return new Command("discover")
     .description("Discover OronBox instances on the local network via mDNS")
-    .option("-t, --timeout <seconds>", "Discovery scan timeout in seconds", "3")
+    .option("-t, --timeout <seconds>", "Discovery scan timeout in seconds", "5")
     .action(async (opts: { timeout: string }, cmd: Command) => {
       const globalOpts = cmd.optsWithGlobals() as { json?: boolean };
-      const timeoutMs = (parseFloat(opts.timeout) || 3) * 1000;
+      const timeoutMs = (parseFloat(opts.timeout) || 5) * 1000;
 
       if (!globalOpts.json) {
         console.log(`Scanning local network for OronBox services via mDNS (${opts.timeout}s)...`);

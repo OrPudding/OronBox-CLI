@@ -15,7 +15,7 @@ function sleep(ms: number): Promise<void> {
 export function createPairCommand(): Command {
   return new Command("pair")
     .description("Pair this computer with an OronBox mobile client (auto-discovers if target omitted)")
-    .argument("[target]", "Target host:port (e.g. 192.168.1.100:8080)")
+    .argument("[target]", "Target host:port (e.g. 192.168.1.100:10517)")
     .action(async (target: string | undefined, _options: unknown, command: Command) => {
       const globalOpts = command.optsWithGlobals() as { host?: string; port?: string; json?: boolean };
 
@@ -35,8 +35,8 @@ export function createPairCommand(): Command {
 
       // If no host specified, perform auto-discovery via mDNS
       if (!host) {
-        console.log("No target specified. Scanning local network for OronBox instances via mDNS...");
-        const services = await discoverOronBoxServices(2500);
+        console.log("No target specified. Scanning local network for OronBox instances via mDNS (5s)...");
+        const services = await discoverOronBoxServices(5000);
 
         if (services.length === 1) {
           const single = services[0]!;

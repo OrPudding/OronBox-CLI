@@ -1,4 +1,4 @@
-export const DEFAULT_PORT = 8080;
+export const DEFAULT_PORT = 10517;
 export const DEFAULT_HOST = "127.0.0.1";
 export const CONFIG_DIR_NAME = ".oronbox";
 export const CREDENTIALS_FILE_NAME = "credentials.json";
