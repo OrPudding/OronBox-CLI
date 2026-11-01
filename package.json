@@ -1,0 +1,44 @@
+{
+  "name": "oronbox-cli",
+  "version": "0.1.0",
+  "description": "Official command-line tool for OronBox to inspect, automate, and control VelaOS & ZeppOS wearables over local network",
+  "type": "module",
+  "bin": {
+    "oronbox-cli": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "rolldown -c -w",
+    "build": "rolldown -c",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "pnpm run typecheck && pnpm run build",
+    "cli": "node ./dist/cli.js"
+  },
+  "keywords": [
+    "oronbox",
+    "cli",
+    "wearables",
+    "velaos",
+    "zeppos",
+    "developer-tools"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bonjour-service": "^1.4.4",
+    "commander": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "rolldown": "^1.0.0-rc.16",
+    "typescript": "^5.8.3",
+    "vitest": "^5.0.5"
+  }
+}
